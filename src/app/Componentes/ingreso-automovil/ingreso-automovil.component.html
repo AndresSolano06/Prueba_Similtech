@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-header">
+        Ingreso de vehiculos
+    </div>
+    <div class="card-body">
+
+        <form ngNativeValidate [formGroup]="formIngreso" (ngSubmit)="enviarDatos()">
+            <div class="mb-3">
+              <label for="" class="form-label">Hora de ingreso</label>
+              <input required type="datetime-local"
+                class="form-control" name="" formControlName="hora_entrada" id="" aria-describedby="helpId" placeholder="Seleccione la fecha y hora de ingreso">
+            </div>
+
+            <div class="mb-3">
+              <label for="" class="form-label">Placa</label>
+              <input required type="text"
+                class="form-control" name="" formControlName="Placa" id="" aria-describedby="helpId" placeholder="Digite la placa del vehiculo">
+            </div>
+
+            <div class="mb-3">
+              <label for="" class="form-label">Marca</label>
+              <input required type="text"
+                class="form-control" name="" id=""  formControlName="marca" aria-describedby="helpId" placeholder="Digite la marca del vehiculo">
+            </div>
+
+            <div class="mb-3">
+              <label for="" class="form-label">Color</label>
+              <input required type="text"
+                class="form-control" name="" id="" formControlName="color" aria-describedby="helpId" placeholder="Digite el color del vehiculo">
+            </div>
+
+            <div class="mb-3">
+              <label for="" class="form-label">Tipo</label>
+              <input required type="text"
+                class="form-control" name="" id="" formControlName="tipo" aria-describedby="helpId" placeholder="Digite el tipo de vehiculo">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Cobro</label>
+              <input required type="text"
+                class="form-control" name="" id="number" formControlName="cobro" aria-describedby="helpId" placeholder="0" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label for="" class="form-label">Estado</label>
+              <input required id="quantity" type="number" min="0" max="1"
+                class="form-control" name="" id="" formControlName="estado" aria-describedby="helpId" placeholder="Digite el estado en el que se encuentra el vehiculo">
+            </div>
+
+            <div class="btn-group" role="group" aria-label="">
+                <button type="submit" class="btn btn-success">Agregar</button>
+                <button type="button" routerLink="/registros-automovil/" class="btn btn-primary ">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <h6>Prueba tecnica de Andres Solano para Similtech</h6>
+</div>

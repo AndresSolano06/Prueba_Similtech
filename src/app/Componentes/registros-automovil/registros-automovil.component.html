@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-success" routerLink="/ingreso-automovil/">Agregar nuevo Vehiculo</a>
+    </div>
+    <div id="htmlData" class="card-body">
+        <h1>Listado de Vehiculos</h1>
+        <div class="form-group">
+            <input type="text" class="form-control" name="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
+        </div>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hora entrada</th>
+                    <th>Hora salida</th>
+                    <th>Placa</th>
+                    <th>Marca</th>
+                    <th>Color</th>
+                    <th>Tipo</th>
+                    <th>Cobro</th>
+                    <th>Estado</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Vehiculo of Vehiculos | filtro:filterPost">
+                    <td >{{Vehiculo.id}}</td>
+                    <td>{{Vehiculo.hora_entrada}}</td>
+                    <td >{{Vehiculo.hora_salida}}</td>
+                    <td>{{Vehiculo.Placa}}</td>
+                    <td >{{Vehiculo.marca}}</td>
+                    <td>{{Vehiculo.color}}</td>
+                    <td >{{Vehiculo.tipo}}</td>
+                    <td>{{Vehiculo.cobro}}</td> 
+                    <td >{{Vehiculo.estado}}</td>
+                    <td>
+                        <a class="btn btn-info" routerLink="/salida-automovil/{{Vehiculo.id}}">Dar salida</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-danger" (click)="downloadPDF()">Descargar reporte</button>
+    </div>
+    <h6>Prueba tecnica de Andres Solano para Similtech</h6>
+    
+</div>
